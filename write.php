@@ -1,6 +1,7 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "alswo123");
-mysqli_select_db($conn, "opentutorials");
+require("config/config.php");
+require("lib/db.php");
+$conn = db_init($config["host"], $config["duser"], $config["dpw"], $config["dname"]);
 $result = mysqli_query($conn, "SELECT * FROM topic");
 ?>
 <!DOCTYPE html>
@@ -28,7 +29,6 @@ $result = mysqli_query($conn, "SELECT * FROM topic");
         <input type="button" value="black" onclick="document.getElementById('target').className='black'"/>
     <a href="http://localhost/write.php">쓰기</a>
     </div>
-    <>
     <form action="process.php" method="post">    
         <p>
             제목 : <input type="text" name="title"> 
