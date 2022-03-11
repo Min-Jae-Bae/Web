@@ -1,3 +1,8 @@
+<?php
+$conn = mysqli_connect("localhos", "root", "alswo123");
+mysqli_select_db($conn, "opentutorials");
+mysqli_query($conn, "SELECT * FROM topic");
+?>
 <!DOCTYPE html>
 <html>
 <head>
