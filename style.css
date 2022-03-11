@@ -19,6 +19,7 @@ nav {
 }
 nav ol {
   list-style: none;
+  padding: 0;
 }
 article {
   float: left;

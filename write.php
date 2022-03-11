@@ -28,16 +28,18 @@ $result = mysqli_query($conn, "SELECT * FROM topic");
         <input type="button" value="black" onclick="document.getElementById('target').className='black'"/>
     <a href="http://localhost/write.php">쓰기</a>
     </div>
-    <article>
-    <?php
-    if(empty($_GET['id']) == false) {
-    $sql = 'SELECT * FROM topic WHERE id = '.$_GET['id'];
-    $result = mysqli_query($conn, $sql);
-    $row = mysqli_fetch_assoc($result);
-    echo '<h2>'.$row['title'].'</h2>';
-    echo $row['discription'];
-    }
-    ?>
-    </article>
+    <>
+    <form action="process.php" method="post">    
+        <p>
+            제목 : <input type="text" name="title"> 
+        </p>
+        <p>
+            작성자 : <input type="text" name="author">
+        </p>
+        <p>
+            본문 : <textarea name="discription"></textarea>
+        </p>
+        <input type="submit" name="name">
+    </form>
 </body>
 </html>
