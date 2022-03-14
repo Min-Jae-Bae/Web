@@ -12,3 +12,6 @@ body.black {
 .container {
   padding-top: 20px;
 }
+#control {
+  margin-bottom: 40px;
+}
