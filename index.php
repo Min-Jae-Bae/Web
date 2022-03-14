@@ -8,14 +8,20 @@ $result = mysqli_query($conn, "SELECT * FROM topic");
 <html>
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="http://localhost/bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="http://localhost/style.css">
 </head>
 <body id="target">
-    <header>
-        <img src="https://s3.ap-northeast-2.amazonaws.com/opentutorials-user-file/course/94.png" alt="생활코딩">
+    <div class="container-fluid">
+    <header class="jumbotron text-center">
+        <img src="https://s3.ap-northeast-2.amazonaws.com/opentutorials-user-file/course/94.png" alt="생활코딩" class="img-circle" id="logo">
         <h1><a href="http://localhost/index.php">JavaScript</a></h1>
     </header>
-    <nav>
+    <div class="row">
+    <nav class="col-md-3">
         <ol>
         <?php
         while($row = mysqli_fetch_assoc($result)){
@@ -24,6 +30,7 @@ $result = mysqli_query($conn, "SELECT * FROM topic");
         ?>
         </ol>
     </nav>
+    <div class="col-md-9">
     <div id="control">
         <input type="button" value="white" onclick="document.getElementById('target').className='white'"/>
         <input type="button" value="black" onclick="document.getElementById('target').className='black'"/>
@@ -40,5 +47,12 @@ $result = mysqli_query($conn, "SELECT * FROM topic");
     }
     ?>
     </article>
+    </div>
+    </div>
+    </div>
+    <!-- jQuery necessary for Bootstrap's JavaScript plugins -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins below, or include individual files as needed -->
+    <script src="http://localhost/bootstrap-3.3.4-dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 </body>
 </html>
