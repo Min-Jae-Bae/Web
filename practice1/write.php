@@ -10,9 +10,10 @@ require_once('conn.php');
     </head>
     <body id="body" class="white">
         <header>
-            <h1><a href="index.php">JavaScript</a></h1>
+            <h1>JavaScript</h1>
         </header>
         <nav>
+
             <ol>
             <?php
             $sql = "SELECT * FROM `topic`";
@@ -25,26 +26,29 @@ require_once('conn.php');
         </nav>
         <div id="content">
         <article>
-            <?php
-            if(empty($_GET['id'])){
-                echo "Welcome";
-            } else {
-                $id = mysqli_real_escape_string($conn, $_GET['id']);
-                $sql = "SELECT topic.id, topic.title, topic.description, user.name, topic.created FROM topic LEFT JOIN user ON topic.author = user.id WHERE topic.id=".$id;
-                $result = mysqli_query($conn, $sql);
-                $row = mysqli_fetch_assoc($result);
-            ?>
-                <h2><?=htmlspecialchars($row['title'])?></h2>
-                <div><?=htmlspecialchars($row['created'])?> | <?=htmlspecialchars($row['name'])?></div>
-                <div><?=htmlspecialchars($row['description'])?></div>
-            <?php
-            }
-            ?>
+            <form class="" action="process.php" method="post">    
+            <p>
+                <label for="title">제목:</label>
+                <input id="title" type="text" name="title">
+            </p>
+            <p>
+                <label for="author">저자:</label>
+                <input id="author" type="text" name="author" value="">
+            </p>
+            <p>
+                <label for="description">본문:</label>
+                <textarea name="description" id="description" cols="40" rows="8"></textarea>
+            </p>
+            <p>
+                <input type="submit" value="전송">
+            </p>
+        </form>
         </article>
         <input type="button", name="name" value="White" onclick="document.getElementById('body').className=''">
         <input type="button", name="name" value="Black" onclick="document.getElementById('body').className='black'">
-        <a href="write.php">쓰기</a>
+        <a href="write.php">쓰가</a>
         </div>
 
     </body>
 </html>
+
