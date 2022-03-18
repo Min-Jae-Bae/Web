@@ -13,6 +13,7 @@ $result = mysqli_query($conn, "SELECT * FROM topic");
     <!-- Bootstrap CSS -->
     <link href="/bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/style.css">
+    <title>FOOTBALL</title>
 </head>
 <body id="target">
     <div class="container-fluid">
